@@ -1,3 +1,7 @@
+body {
+    text-align: center;
+}
+
 p {
     padding: 5px;
     border: solid 2px;
@@ -13,4 +17,8 @@ button {
     margin-left: 10px;
     width: 49%;
     padding: 30px;
+}
+
+.isHidden {
+    display: none;
 }

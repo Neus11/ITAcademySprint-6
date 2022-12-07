@@ -2,11 +2,18 @@
     Vue.component('home', {
         template: //html
         `
-        <div>          
+        <div>    
+            <div :class='{isHidden: isHidden}'>
+                <h1>Benvinguts!</h1>
+                <h3>Preparats per accedir als consells??</h3>
+                <h2>Pressioni el botó per seguir<h2>
+                <button @click='showHide()':class='{isHidden: isHidden}'>CLiCK ME!</button>
+            </div>      
             <escena 
             :textos = 'arrayTexts' 
             :botones = 'currentSentence' 
             :activeIt = 'activeItem'
+            :isHid = 'isHidden'
             @ant="currentSentence" 
             @seg="currentSentence"></escena>
         </div>
@@ -24,19 +31,21 @@
                 ],
                 sentence1: '',
                 sentence2: '',
-                activeItem: 0
+                activeItem: 0,
+                isHidden: false
             }
         },
         methods: {
-            
             currentSentence(i) {
                 if(i == 'sentence2'){
                     this.activeItem++;
                 }
                 if(i == 'sentence1'){
                     this.activeItem--;
-                }
-                
+                }  
+            },
+            showHide(){
+                this.isHidden = !this.isHidden;
             }
         }
     })
