@@ -6,9 +6,10 @@
             <div :class='{isHidden: isHidden}'>
                 <h1>Benvinguts!</h1>
                 <h3>Preparats per accedir als consells??</h3>
-                <h2>Pressioni el botó per seguir<h2>
+                <h2>Pressioni el botó per seguir</h2>
                 <button @click='showHide()':class='{isHidden: isHidden}'>CLiCK ME!</button>
-            </div>      
+            </div> 
+             
             <escena 
             :textos = 'arrayTexts' 
             :botones = 'currentSentence' 
@@ -37,10 +38,10 @@
         },
         methods: {
             currentSentence(i) {
-                if(i == 'sentence2'){
+                if(i == 'sentence2' && this.activeItem <= 4){
                     this.activeItem++;
                 }
-                if(i == 'sentence1'){
+                if(i == 'sentence1' && this.activeItem > 0){
                     this.activeItem--;
                 }  
             },

@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    background-image: url("img/1.jpg");
 }
 
 p {
@@ -21,4 +22,8 @@ button {
 
 .isHidden {
     display: none;
+}
+
+.fondo {
+    
 }

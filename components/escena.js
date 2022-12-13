@@ -1,6 +1,7 @@
 Vue.component('escena', {
     template: //html
     `
+    <div>
     <div v-if="isHid">
         <button @click="$emit('ant', 'sentence1')">Anterior</button>
         <button @click="$emit('seg', 'sentence2')">Següent</button> 
@@ -12,6 +13,8 @@ Vue.component('escena', {
             :class="{frasePrueba: i === activeIt}">
             {{text}} 
         </p>
+    </div>
+    <div class="fondo"></div>
     </div>
     `,
     props: ['textos', 'botones', 'activeIt', 'isHid']
